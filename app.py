@@ -61,10 +61,10 @@ def get_bot_response():
             if tg['tag'] == tag: 
                 responses = tg['responses'] 
         res="COVID-BOT:"+random.choice(responses)
-        return str(res)
+        return "COVID_19 1"
     else: 
         res="COVID-BOT:I am sorry but I can't understand"
-        return str(res)
+        return res
    
     return "Missing Data!"
 
