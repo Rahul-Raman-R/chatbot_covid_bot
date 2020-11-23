@@ -1,14 +1,11 @@
 import nltk
 import pickle
-import numpy
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
-from keras.models import load_model
-from model_files import chatbot_model4,covid1,words4,classes4
-model = load_model('chatbot_model4.h5')
-import json
 import random
 import numpy as np
+from keras.models import load_model
+model = load_model('chatbot_model4.h5')
 intents = pickle.load(open('intents.pkl','rb'))
 words = pickle.load(open('words4.pkl','rb'))
 classes = pickle.load(open('classes4.pkl','rb'))
