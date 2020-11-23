@@ -41,16 +41,16 @@ def index():
 def get_bot_response():
     message = request.args.get('msg')
     
-    p = bow(message, words,show_details=False)
-    results = model.predict(np.array([p]))[0]
-    results_index = numpy.argmax(results) 
-    tag = classes[results_index] 
-    if results[results_index] > 0.5: 
-        for tg in intents["intents"]: 
-            if tg['tag'] == tag: 
-                responses = tg['responses'] 
-        res="COVID-BOT:"+random.choice(responses)
-        return str(res)
+    #p = bow(message, words,show_details=False)
+    #results = model.predict(np.array([p]))[0]
+    #results_index = numpy.argmax(results) 
+    #tag = classes[results_index] 
+    #if results[results_index] > 0.5: 
+     #   for tg in intents["intents"]: 
+      #      if tg['tag'] == tag: 
+       #         responses = tg['responses'] 
+        #res="COVID-BOT:"+random.choice(responses)
+        return "HELLO"
     else: 
         res="COVID-BOT:I am sorry but I can't understand"
         return str(res)
