@@ -43,6 +43,8 @@ def index():
 def get_bot_response():
     sentence = request.args.get('msg')
     nltk.download('punkt')
+    nltk.download('wordnet')
+    nltk.download('reuters')
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words] 
     # bag of words - matrix of N words, vocabulary matrix
