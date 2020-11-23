@@ -37,7 +37,7 @@ def index():
 	return render_template('index.html')
 
 
-@app.route('/predict',methods=['POST'])
+@app.route('/get',methods=['GET'])
 def get_bot_response():
     message = request.args.get('msg')
     
