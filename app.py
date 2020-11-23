@@ -5,7 +5,7 @@ lemmatizer = WordNetLemmatizer()
 import random
 import numpy as np
 from keras.models import load_model
-model = load_model('chatbot_model4.h5')
+model = load_model("chatbot_model4.h5")
 intents = pickle.load(open('intents.pkl','rb'))
 words = pickle.load(open('words4.pkl','rb'))
 classes = pickle.load(open('classes4.pkl','rb'))
@@ -41,18 +41,19 @@ def index():
 def get_bot_response():
     message = request.args.get('msg')
     
-    #p = bow(message, words,show_details=False)
-    #results = model.predict(np.array([p]))[0]
-    #results_index = numpy.argmax(results) 
-    #tag = classes[results_index] 
-    #if results[results_index] > 0.5: 
-     #   for tg in intents["intents"]: 
-      #      if tg['tag'] == tag: 
-       #         responses = tg['responses'] 
-        #res="COVID-BOT:"+random.choice(responses)
-     
-    res="COVID-BOT:I am sorry but I can't understand"
-    return str(res)
+    p = bow(message, words,show_details=False)
+    results = model.predict(np.array([p]))[0]
+    results_index = numpy.argmax(results) 
+    tag = classes[results_index] 
+    if results[results_index] > 0.5: 
+        for tg in intents["intents"]: 
+            if tg['tag'] == tag: 
+                responses = tg['responses'] 
+        res="COVID-BOT:"+random.choice(responses)
+        return str(res)
+    else: 
+        res="COVID-BOT:I am sorry but I can't understand"
+        return str(res)
    
     return "Missing Data!"
 
