@@ -1,6 +1,7 @@
 import nltk
 import pickle
 import numpy
+from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 from keras.models import load_model
