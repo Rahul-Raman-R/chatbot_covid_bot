@@ -6,19 +6,29 @@
     <link rel="icon" href="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
+    
+
       body {
         font-family: monospace;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-attachment: fixed;
+        background-attachment: fixed
+        background-colour:#4db2b2;
+        
       }
       h1 {
-        border: 1px solid white;
+       
+        
         border-radius: 5px;
-        color: #ce9e62;
-        display: inline-block;Alegreya
-        font-size: 3em;
+        
+        
+        background-image: linear-gradient(to right, #ccccff, #b8bde6);
+        color: #541770;
+        font-size: 4em;
+        font-style:bold;
+       
+        font-family: "Didot", serif;
         margin: 5;
         padding: 10px;
       }
@@ -40,13 +50,30 @@
         width: 90%;
         border: none;
         border-bottom: 3px solid black;
-        font-family: 'Alegreya';
+        font-family: 'Optima, sans-serif';
         font-size: 17px;
       }
+      
+       
+.rate {
+  background-color :#ccccff ;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: #ccccff;
+}
+
+   #mybutton {
+  position: fixed;
+  bottom: -3px;
+  right: 10px;
+}
       .userText {
-        color: white;
-        background-color: #4b6777; 
-        font-family: 'Alegreya';
+        
+        color:#192e00 ;
+        background-color: white; 
+        background: linear-gradient(0.25turn, #3f87a6, #ebf8e1);
+        font-family:'Alegreya';
         font-size: 17px;
         text-align: center;
         line-height: 30px;
@@ -57,8 +84,12 @@
         border-radius: 5px;
       }
       .botText {
-        color: #ce9e62;
-        background-color: #2c2c2c;
+        
+        color:white;
+        
+        background-color: white; 
+        background-image: linear-gradient(to right, #ab008c, #6e00f2);
+        background-color:white;
         font-family: 'Alegreya';
         font-size: 17px;
         text-align: center;
@@ -77,8 +108,9 @@
         border-radius: 5px;
       }
       p{
-    	color:red;
-    	font-family: 'Alegreya';
+    	color:black;
+    	font-family: 'Gill Sans, sans-serif';
+    	font-style:italic;
     	font-size:25px;
     	text-align: center;
         }
@@ -87,17 +119,22 @@
         width: 40%;
         padding: 12px 20px;
         margin: 8px 0;
+	align: center;
         box-sizing: border-box;
         position: fixed;
         border-radius: 5px;
       }
+     
+  }
+}
+
     </style>
   </head>
-  <body background="{{ url_for('static', filename='C:/Users/DELL/Covid_BOT/.spyproject/blue-covid-banner.jpg') }}">
+  <body>
     <img />
     <center>
       <h1>
-      COVID-19 Chatbot
+      COVID-19 CHATBOT
       </h1>
        <p>
 	This is a NLP Chatbot created to answer your queries about coronavirus.
@@ -112,6 +149,11 @@
       </div>
         <div id="userInput">
           <input id="nameInput" type="text" name="msg" placeholder="Ask me anything..." />
+        </div>
+        <div id="mybutton">
+	 <button onclick="location.href='https://forms.gle/4vNdK4Ra4AtKRdQm7'" type="button" class="rate">
+        Rate us!</button>
+         
         </div>
 <script>
         function getBotResponse() {
