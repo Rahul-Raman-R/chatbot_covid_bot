@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <title>COVID-19 Chatbot</title>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
+    <link rel="icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+    
+
+      body {
+	background-image: url({{ url_for('static', filename='img/909.jpg') }});
+        font-family: monospace;
+	border-radius: 5px;
+        background-position: center;
+        background-repeat: repeat;
+        background-attachment: fixed
+        background-colour:#4db2b2;
+	background-size: 100%;
+        
+      }
+      h1 {
+        background-image: linear-gradient(to right,#76D7C4,#76D7C4);
+        color: #138D75;
+        font-size: 4em;
+        font-style:bold;
+        font-family: "Didot", serif;
+        margin: 0;
+	padding: 0;
+        
+      }
+      #chatbox {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        margin-top: 60px;
+	
+      }
+      #userInput {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        margin-top: 60px;
+      }
+      #textInput {
+        width: 90%;
+        border: none;
+        border-bottom: 3px solid black;
+        font-family: 'Optima, sans-serif';
+        font-size: 17px;
+      }
+      
+       
+.rate {
+  background-color :#138D75;
+  color: yellow;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: yellow;
+}
+
+   #mybutton {
+  position: fixed;
+  bottom: -3px;
+  right: 10px;
+}
+      .userText {
+      	border-style:solid;
+	border-color: black;
+        color:black;
+        background-color: #76D7C4; 
+        font-family:'Alegreya';
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 5px;
+      }
+      .userText span {
+        padding:10px;
+        border-radius: 5px;
+      }
+      .botText {
+        border-style:solid;
+        border-color: black;
+        color: white;
+        background-color: #138D75; 
+        font-family: 'Alegreya';
+        font-size: 17px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 5px;
+      }
+      .botText span {
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .boxed {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-top: 30px;
+        border-radius: 5px;
+      }
+      p{
+	background-color:#138D75;
+    	color:white;
+    	font-family: 'Gill Sans, sans-serif';
+    	font-style:italic;
+    	font-size:25px;
+    	text-align: center;
+        }
+      input[type=text] {
+        bottom: 0;
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+	align: center;
+        box-sizing: border-box;
+        position: fixed;
+        border-radius: 5px;
+      }
+     
+  }
+}
+
+    </style>
+  </head>
+  <body >
+     
+    <center>
+      <h1>
+      COVID-19 CHATBOT
+      </h1>
+	<hr font-family: 'Gill Sans, sans-serif';
+    	font-style:italic;>
+	<font color= white > <marquee bgcolor=#138D75>
+	Emergency Medical Support:<font color= yellow>104/97456-97456</font>    Dasoha Food Helpline:<font color= yellow>155214</font>    Apthamitra Helpline:<font color= yellow>14410</font>
+	</marquee>
+	</font>
+	<hr>
+       <p>
+	This is a NLP Chatbot created to answer your queries about coronavirus.
+	This bot is capable of answering questions based on the answers from the WHO FAQ's. 
+	Make sure you enter full sentences and try other questions if the bot doesn't understand your questions.
+      </p>
+    </center>
+    <div class="boxed">
+      <div>
+        <div id="chatbox">
+        </div>
+      </div>
+        <div id="userInput">
+          <input id="nameInput" type="text" name="msg" placeholder="Ask me anything..." />
+        </div>
+        <div id="mybutton">
+	 <button onclick="location.href='https://forms.gle/4vNdK4Ra4AtKRdQm7'" type="button" class="rate">
+        Rate us!</button>
+         
+        </div>
+<script>
+        function getBotResponse() {
+          var rawText = $("#nameInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+          $("#nameInput").val("");
+          $("#chatbox").append(userHtml);
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "start", behavior: "smooth" });
+          });
+        }
+        $("#nameInput").keypress(function(e) {
+          if (e.which == 13) {
+            getBotResponse();
+          }
+        });
+</script>
+</div>
+</img>
+</body>
+</html>
