@@ -22,6 +22,8 @@ def index():
 @app.route('/get')
 def get_bot_response():
     sentence = request.args.get('msg')
+    if len(sentence) <3:
+        return "Invalid input."
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words] 
     # bag of words 
