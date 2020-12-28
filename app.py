@@ -11,7 +11,8 @@ import numpy as np
 intents = pickle.load(open('intents.pkl','rb'))
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('categories.pkl','rb'))
-
+nltk.download('punkt')
+nltk.download('wordnet')
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__,template_folder='templates',static_url_path='/static')
 
