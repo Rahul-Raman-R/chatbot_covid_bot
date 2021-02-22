@@ -67,6 +67,8 @@ cd to the directory where the cloned repository is located
 ```sh
   conda install --file requirements.txt
    ```
+Or else you can manually install the packages in requirements.txt
+
 4. Running the project on local server
 * Open the sypder notebook
 * Create a new project and add the cloned repository
@@ -76,7 +78,9 @@ cd to the directory where the cloned repository is located
 <!-- USAGE EXAMPLES -->
 ## Usage
 Here you can see some examples of the flask application usage.
+![alt text](https://github.com/Rahul-Raman-R/chatbot_covid_bot/blob/main/static/img/ss1.png?raw=true)
 
+![alt text](https://github.com/Rahul-Raman-R/chatbot_covid_bot/blob/main/static/img/ss2.png?raw=true)
 
 ## Deployment
 1. Create Heroku account.
