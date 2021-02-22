@@ -76,6 +76,7 @@ cd to the directory where the cloned repository is located
 <!-- USAGE EXAMPLES -->
 ## Usage
 Here you can see some examples of the flask application usage.
+![alt text](https://github.com/Rahul-Raman-R/chatbot_covid_bot/blob/main/img/static/ss1.png?raw=true)
 
 ## Deployment
 1. Create Heroku account.
