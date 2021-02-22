@@ -76,18 +76,17 @@ cd to the directory where the cloned repository is located
 <!-- USAGE EXAMPLES -->
 ## Usage
 Here you can see some examples of the flask application usage.
-![alt text](https://github.com/Rahul-Raman-R/chatbot_covid_bot/blob/main/img/static/ss1.png?raw=true)
+
 
 ## Deployment
 1. Create Heroku account.
 2. Create a new app on Heroku:
 We have to name our app and now we can deploy the app through CLI or through the Heroku web site. Here we have used the website.
 In deployment method we chose GitHub.
-
+![alt text](https://github.com/Rahul-Raman-R/chatbot_covid_bot/blob/main/static/img/ss3.png?raw=true)
 Then we deploy the main branch of the repository. Then Heroku starts with Procfile and then deploys the web application on an URL.
-
 [https://covid-bot1.herokuapp.com/](https://covid-bot1.herokuapp.com/)
-
+![alt text](https://github.com/Rahul-Raman-R/chatbot_covid_bot/blob/main/static/img/ss4.png?raw=true)
 Now the web application can be accessed using this URL from anywhere.
 
 <!-- CONTACT -->
